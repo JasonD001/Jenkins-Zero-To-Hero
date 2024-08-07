@@ -9,9 +9,11 @@ pipeline {
                 }
             }
             steps {
-                // Ensure the script is in the right location
-                sh 'ls -l /workspace'
-                sh 'python /workspace/hello_world.py'
+                // Verify the directory structure inside the container
+                sh 'ls -l /workspace/multi-stage-multi-agent'
+
+                // Run the Python script
+                sh 'python /workspace/multi-stage-multi-agent/hello_world.py'
             }
         }
     }
