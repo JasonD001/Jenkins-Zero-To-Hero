@@ -1,0 +1,13 @@
+pipeline {
+  agent none
+  stages {
+    stage('Run Python Script') {
+      agent {
+        docker { image 'python:3.9-slim' } // Use a Docker image with Python
+      }
+      steps {
+        sh 'python /path/to/hello_world.py' // Run the Python script
+      }
+    }
+  }
+}
